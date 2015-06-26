@@ -1,23 +1,130 @@
-body{}
+body{
+
+
+
+}
 #container{
 	margin: 0 auto;
-	background-color: green;
-	height: 500px;
-	width: 700px;
+	background-image: url("../image/chalkboard.jpg");
+    /*background-image: url("img_tree.gif"), url("img_flwr.gif");*/
+    background-color: #cccccc;
+    height: 650px;
+    width: auto;
+
+
+}
+#startbutton{
+	border: 2px white solid;
+/*  background-image: url("../images/startgame_button.png");
+*/	font-size: 28px;
+    background: rgba(54, 25, 25, .5);
+	height: 75px;
+	width: 250px;
+	border-radius: 50%;
+	color:white;
+
+
+}
+#alltheactions{
+
+	float: right;
+	margin: 20% 0;
+}
+#money{
+	float: left;
+	margin: 20% 0;
 
 }
 #player{
 
 }
+#player h4{
+	border: 2px white solid;
+/*  background-image: url("../images/startgame_button.png");
+*/	font-size: 18px;
+    background: rgba(54, 25, 25, .5);
+	height: 40px;
+	width: 100px;
+	border-radius: 50%;
+	color:white;
+
+}
 #deal{
 
 }
-#hit{
-	
+#bet{
+	background-color: #308c44;
+	height:70px;
+	width: 70px;
+	border: white solid 7px;
+	border-radius: 50%;
+	color: white;
+
+
 }
+#hit{
+	background-color: #ffcc66;
+	height:70px;
+	width: 70px;
+	border: white solid 7px;
+	border-radius: 50%;
+	color: white;
+}
+#stand{
+	background-color: #870155;
+	height:70px;
+	width: 70px;
+	border: white solid 7px;
+	border-radius: 50%;
+	color: white;
+}
+}
+
 #dealer{
 
 }
+#five{
+	background-color: red;
+	height:70px;
+	width: 70px;
+	border: white solid 7px;
+	border-radius: 50%;
+	color: white;
+}
+#ten{
+	background-color: blue;
+	height:70px;
+	width: 70px;
+	border: white solid 7px;
+	border-radius: 50%;
+	color: white;
+}
+#fifteen{
+	background-color: green;
+	height:70px;
+	width: 70px;
+	border: white solid 7px;
+	border-radius: 50%;
+	color: white;
+}
+
+#twenty{
+	background-color: black;
+	height:70px;
+	width: 70px;
+	border: white solid 7px;
+	border-radius: 50%;
+	color: white;
+}
+#twentyfive{
+	background-color: #655d90;
+	height:70px;
+	width: 70px;
+	border: white solid 7px;
+	border-radius: 50%;
+	color: white;
+}
+
 .playerard1{
 	height: 250px;
 	width: 150px;

@@ -2,6 +2,7 @@
 var Cards = function(theValue, theType){
 	this.theValue = theValue; 
 	this.theType = theType;
+	this.image = "image/" + this.theValue + this.theType + ".png";
 }
 
 

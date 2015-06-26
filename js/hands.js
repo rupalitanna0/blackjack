@@ -4,6 +4,7 @@ var Hands = function(){
 	this.cards = [];
 	this.getCards = function(card){
 		this.cards.push(card);
+		
 	};
 	this.getValue = function() {
 		for(var i = 0; i < this.cards.length; i++){
@@ -11,6 +12,7 @@ var Hands = function(){
 			if(this.cards[i].theValue === "j"){
 				this.value += 10
 				console.log("added 10 for j")
+
 			}else if(this.cards[i].theValue === "q"){
 				this.value += 10
 				console.log("added 10 for q")
@@ -28,9 +30,12 @@ var Hands = function(){
 				this.value += this.cards[i].theValue;
 				console.log("added card value")
 			} 
-		}
+		}return this. value
 	};
 	this.hit = function  (card) {
+		debugger;
+				console.dir(card);
+
 		this.cards.push(card)
 	}
 }
