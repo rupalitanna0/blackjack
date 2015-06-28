@@ -14,8 +14,7 @@ window.onload = function(){
 
   document.getElementById("hit").addEventListener('click', function(){
   	game.player.hand.hit(game.dealer.deck.getRandom());
-  	game.points();
-  	// game.renderhit();
+    game.renderhit();
   });
   document.getElementById("bet").addEventListener('click', function(){
   	game.player.bet();
@@ -70,38 +69,45 @@ var game = {
 	},
 	render: function () {
         var cardDiv = $('#cardshow');
-        	for(var i = 0; i < this.player.hand.cards.length;i++){
-            var card = $('<div>').css({"height": "300px", "width": "200px", "float": "left"})
+        for(var i = 0; i < this.player.hand.cards.length;i++){
+            var card = $('<div>').css({"height": "200px", "width": "100px", "float": "left"})
             var img = $('<img>').attr('src', this.player.hand.cards[i].image);
             card.append(img);
             cardDiv.append(card)
         }
         var dealerCard = $('#dealercards');
-            for(var j = 0; j < this.dealer.hand.cards.length;j++){
-            var card = $('<div>').css({"height": "300px", "width": "200px", "float": "left"})
-            var img = $('<img>').attr('src', this.dealer.hand.cards[j].image);
-            card.append(img);
-            dealerCard.append(card)
+        for(var j = 0; j < this.dealer.hand.cards.length;j++){
+	        var card = $('<div>').css({"height": "200px", "width": "100px", "float": "left"})
+	        var img = $('<img>').attr('src', this.dealer.hand.cards[j].image);
+	        card.append(img);
+	        dealerCard.append(card)
         }
 
     },
-    // renderhit: function () {
-    //     var cardDiv = $('#cardshow');
-    //     	// for(var i = 0; i < this.player.hand.cards.length;i++){
-    //         var card = $('<div>').css({"height": "300px", "width": "200px", "float": "left"})
-    //         var img = $('<img>').attr('src', this.player.hand.cards.image);
-    //         card.append(img);
-    //         cardDiv.append(card)
-    //     }
-    //     var dealerCard = $('#dealercards');
-    //         // for(var j = 0; j < this.dealer.hand.cards.length;j++){
-    //         var card = $('<div>').css({"height": "300px", "width": "200px", "float": "left"})
-    //         var img = $('<img>').attr('src', this.dealer.hand.cards.image);
-    //         card.append(img);
-    //         dealerCard.append(card)
-        
+    renderhit: function () {
+        var cardDiv = $('#cardshow');
 
-    // },
+        //for(var i = 0; i < this.player.hand.cards.length;i++){
+	        var card = $('<div>').css({"height": "200px", "width": "100px", "float": "left"})
+	        var img = $('<img>').attr('src', this.player.hand.cards[0].image);
+	        card.append(img);
+	        cardDiv.append(card)
+	        		this.playPoint = this.player.hand.getValue();
+	        		var ppoint = document.getElementById("playerpoints");
+		ppoint.innerHTML = (this.playPoint);
+
+       // }
+        // var dealerCard = $('#dealercards');
+        // //for(var j = 0; j < this.dealer.hand.cards.length;j++){
+	       //  var card = $('<div>').css({"height": "200px", "width": "100px", "float": "left"})
+	       //  var img = $('<img>').attr('src', this.dealer.hand.cards[0].image);
+	       //  	        card.append(img);
+
+	       //  card.append(img);
+	       //  dealerCard.append(card)
+        //}
+
+    },
 
 
 	points: function(){
@@ -175,55 +181,6 @@ var game = {
 		moneyDisplay.innerHTML = (this.player.playermoney);
 			
 	}
-	// moneyop: function(){
-	// 	var dollarfive = document.getElementById("five");
-	// 	var dollarten = document.getElementById("ten");
-	// 	var dollarfitn = document.getElementById("fifteen");
-	// 	var dollartwenty = document.getElementById("twenty");
-	// 	var dollartwfive = document.getElementById("twentyfive");
-
-	// 	debugger
-	// 	if(dollarfive.clicked == true){
-	// 		alert("money is working")
-	// 		debugger
-	// 		var dl5 = dollarfive.getAttribute("data-value");
-	// 		var numtostring = parseInt(dl5);
-	// 		game.player.bet(numtostring);
-	// 		console.log("i ma doll5");
-	// 				debugger;
-
-	// 	}else if(dollarten.clicked == true){
-	// 		var dl10 = dollarten.getAttribute("data-value");
-	// 		var ntos = parseInt(dl10);
-	// 		game.player.bet(ntos);
-	// 		console.log("i ma doll10");
-	// 				debugger;
-
-	// 	}else if(dollarfitn.click == true){
-		
-	// 		var dl15 = dollarfitn.getAttribute("data-value");
-	// 		var nstost = parseInt(dl15);
-	// 		game.player.bet(nstost);
-	// 		console.log("i ma doll15");
-	// 				debugger;
-
-
-	// 	}else if(dollartwenty.clicked == true){
-	// 		var dl20 = dollartwenty.getAttribute("data-value");
-	// 		var numtostr = parseInt(dl20);
-	// 		game.player.bet(numtostr);
-	// 		console.log("i ma doll20");
-
-	// 	}else if(dollartwfive.clicked == true){
-	// 		var dl25 = dollartwfive.getAttribute("data-value");
-	// 		var nstostgs = parseInt(dl25);
-	// 		game.player.bet(nstostgs);
-	// 		console.log("i ma doll25");
-
-	// 	}
-	// 	// where is this going?
-
-	// } 
 	
 	
 
@@ -231,10 +188,4 @@ var game = {
 
 
 	
-	// deal :function(){
-	// 	for(var j = 0; j < 2 ; j++){
-	// 		this.twocards = testHands.getcards();
-	// 	}
-	// 	return this.twocards;	
-	// }
 	

@@ -8,12 +8,13 @@ body{
 	background-image: url("../image/chalkboard.jpg");
     /*background-image: url("img_tree.gif"), url("img_flwr.gif");*/
     background-color: #cccccc;
-    height: 650px;
-    width: auto;
+    height: 550px;
+    width: 1000px;
 
 
 }
 #startbutton{
+
 	border: 2px white solid;
 /*  background-image: url("../images/startgame_button.png");
 */	font-size: 28px;
@@ -25,18 +26,20 @@ body{
 
 
 }
-#alltheactions{
-
-	float: right;
-	margin: 20% 0;
+#spdeal{
+	height: 250px;
+	width: 700px
 }
-#money{
-	float: left;
-	margin: 20% 0;
+#sppla{
+}
+#dealer{
+	float: right;
+	height: 150px;
 
 }
 #player{
-
+	float: left;
+	height: 150px;
 }
 #player h4{
 	border: 2px white solid;
@@ -47,6 +50,17 @@ body{
 	width: 100px;
 	border-radius: 50%;
 	color:white;
+
+}
+
+#alltheactions{
+
+	float: right;
+	margin: 20% 0;
+}
+#money{
+	float: left;
+	margin: 20% 0;
 
 }
 #deal{
@@ -78,11 +92,8 @@ body{
 	border-radius: 50%;
 	color: white;
 }
-}
 
-#dealer{
 
-}
 
 #five{
 	background-color: red;
