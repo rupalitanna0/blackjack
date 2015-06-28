@@ -34,6 +34,24 @@ var Hands = function(){
 	};
 	this.hit = function  (card) {
 		this.cards.push(card);
-		
-	}
+		this.getValue();
+	};
+	this.dealerHit = function(card) {
+	    if (this.value <= 16) {
+	      
+	      this.deal();
+	      console.log("dealer has to hit");
+	    }else{
+	      console.log("dealer can stay");
+	    }
+	};
+    //searches for blackjack
+    this.blackJackSearch = function() {
+      if (this.value === 21) {
+        this.blackJack = true;
+      } else {
+        this.blackJack = false;
+      }
+    };
+
 }

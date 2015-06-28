@@ -10,11 +10,18 @@ window.onload = function(){
   // });
 	document.getElementById("stand").addEventListener('click', function(){
 		game.player.stand();
+		game.winner();
+		game.dealer.hand.dealerHit();
+		game.dealer.hand.blackJackSearch();
 	});
 
   document.getElementById("hit").addEventListener('click', function(){
   	game.player.hand.hit(game.dealer.deck.getRandom());
     game.renderhit();
+    game.dealer.hand.blackJackSearch();
+    game.winner();
+
+
   });
   document.getElementById("bet").addEventListener('click', function(){
   	game.player.bet();
@@ -79,6 +86,7 @@ var game = {
         for(var j = 0; j < this.dealer.hand.cards.length;j++){
 	        var card = $('<div>').css({"height": "200px", "width": "100px", "float": "left"})
 	        var img = $('<img>').attr('src', this.dealer.hand.cards[j].image);
+
 	        card.append(img);
 	        dealerCard.append(card)
         }
@@ -92,9 +100,9 @@ var game = {
 	        var img = $('<img>').attr('src', this.player.hand.cards[0].image);
 	        card.append(img);
 	        cardDiv.append(card)
-	        		this.playPoint = this.player.hand.getValue();
-	        		var ppoint = document.getElementById("playerpoints");
-		ppoint.innerHTML = (this.playPoint);
+	 //        		this.playPoint = this.player.hand.getValue();
+	 //        		var ppoint = document.getElementById("playerpoints");
+		// ppoint.innerHTML = (this.playPoint);
 
        // }
         // var dealerCard = $('#dealercards');
@@ -123,17 +131,18 @@ var game = {
 	},
 	winner: function(){
 				// this doesnt work
-		if(this.playPoint === this.dealerPoint){
-			console.log("its a tie")
-		}else if(this.playPoint > 21){
-			console.log("player rocked");
-		}else if(this.dealerPoint > 21){
-			console.log("dealer rocked");
+		var checkForBust = false;
 
-		}else if(this.playPoint === 21){
-			console.log("player is the winner");
-		}else if(this.dealerPoint === 21){
-			console.log("dealer is the winner");
+
+		if(this.player.hand.value === this.dealer.hand.value){
+			alert("It's a tie");
+		}else if(this.player.hand.value > this.dealer.hand.value){
+			alert("player wins!");
+		}else if(this.player.hand.value < this.dealer.hand.value){
+				alert("dealer wins!");
+		}else if(this.player.hand.value > 21){
+			checkForBust === true;
+			alert("game over its a checkForBust");
 		}
 	},
 	addfive: function(){

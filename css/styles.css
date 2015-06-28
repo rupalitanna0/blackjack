@@ -37,6 +37,9 @@ body{
 	height: 150px;
 
 }
+.hiddencard{
+	background-image: url(image/hidden.png);
+}
 #player{
 	float: left;
 	height: 150px;

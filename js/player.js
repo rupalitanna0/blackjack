@@ -12,9 +12,13 @@
 			return this.playermoney;
 		};
 		this.stand = function(){
-			alert('Are You sure');
-			location.reload();
-			/// how should i return the value of two cards set in deal or whatever player has rite now
+			var card = game.dealer.deal();
+			game.player.hand.hit(card);
+			game.player.hand.getValue()
+						
+			
+			
+
 		};
 		// doubleup : function(){
 		// 	this.doubleCard = testDeck.getrandom();
