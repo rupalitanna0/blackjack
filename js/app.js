@@ -14,6 +14,8 @@ window.onload = function(){
 
   document.getElementById("hit").addEventListener('click', function(){
   	game.player.hand.hit(game.dealer.deck.getRandom());
+  	game.points();
+  	// game.renderhit();
   });
   document.getElementById("bet").addEventListener('click', function(){
   	game.player.bet();
@@ -64,7 +66,44 @@ var game = {
 			this.player.hand.hit(this.dealer.deal());
 			this.dealer.hand.hit(this.dealer.deal());
 		}
+		this.render();
 	},
+	render: function () {
+        var cardDiv = $('#cardshow');
+        	for(var i = 0; i < this.player.hand.cards.length;i++){
+            var card = $('<div>').css({"height": "300px", "width": "200px", "float": "left"})
+            var img = $('<img>').attr('src', this.player.hand.cards[i].image);
+            card.append(img);
+            cardDiv.append(card)
+        }
+        var dealerCard = $('#dealercards');
+            for(var j = 0; j < this.dealer.hand.cards.length;j++){
+            var card = $('<div>').css({"height": "300px", "width": "200px", "float": "left"})
+            var img = $('<img>').attr('src', this.dealer.hand.cards[j].image);
+            card.append(img);
+            dealerCard.append(card)
+        }
+
+    },
+    // renderhit: function () {
+    //     var cardDiv = $('#cardshow');
+    //     	// for(var i = 0; i < this.player.hand.cards.length;i++){
+    //         var card = $('<div>').css({"height": "300px", "width": "200px", "float": "left"})
+    //         var img = $('<img>').attr('src', this.player.hand.cards.image);
+    //         card.append(img);
+    //         cardDiv.append(card)
+    //     }
+    //     var dealerCard = $('#dealercards');
+    //         // for(var j = 0; j < this.dealer.hand.cards.length;j++){
+    //         var card = $('<div>').css({"height": "300px", "width": "200px", "float": "left"})
+    //         var img = $('<img>').attr('src', this.dealer.hand.cards.image);
+    //         card.append(img);
+    //         dealerCard.append(card)
+        
+
+    // },
+
+
 	points: function(){
 		this.playPoint = this.player.hand.getValue();
 		this.dealerPoint = this.dealer.hand.getValue();
@@ -72,7 +111,7 @@ var game = {
 		var ppoint = document.getElementById("playerpoints");
 		ppoint.innerHTML = (this.playPoint);
 
-		var dpoints = document.getElementById("dealpoint");
+		var dpoints = document.getElementById("dealerpoint");
 		dpoints.innerHTML = (this.dealerPoint);
 
 	},

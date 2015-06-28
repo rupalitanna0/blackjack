@@ -1,6 +1,6 @@
 body{
-
-
+    font-family: "Times New Roman", Georgia, Serif;
+    color: white;
 
 }
 #container{
@@ -83,6 +83,7 @@ body{
 #dealer{
 
 }
+
 #five{
 	background-color: red;
 	height:70px;

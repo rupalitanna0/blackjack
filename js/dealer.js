@@ -10,5 +10,3 @@ var Dealer = function (){
 	}
 }
 
-// how to get the amount of bet from the dealer
-// how to get the cards to evaluate the cards

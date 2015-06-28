@@ -4,7 +4,7 @@ var Hands = function(){
 	this.cards = [];
 	this.getCards = function(card){
 		this.cards.push(card);
-		
+
 	};
 	this.getValue = function() {
 		for(var i = 0; i < this.cards.length; i++){
@@ -33,9 +33,7 @@ var Hands = function(){
 		}return this. value
 	};
 	this.hit = function  (card) {
-		debugger;
-				console.dir(card);
-
-		this.cards.push(card)
+		this.cards.push(card);
+		
 	}
 }

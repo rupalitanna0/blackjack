@@ -12,7 +12,7 @@
 			return this.playermoney;
 		};
 		this.stand = function(){
-			alert('you are done');
+			alert('Are You sure');
 			location.reload();
 			/// how should i return the value of two cards set in deal or whatever player has rite now
 		};
